@@ -43,7 +43,11 @@ Objective c Coredata example with create, edit, read, delete methods
         withValue:value
         inManagedObjectContext:self.managedObjectContext
     ];
+    
 [Item getAllItemsWithMOC: self.managedObjectContext];
+
 Item *item = [Item getItemByKey:@"my_key_2" withOMC: self.managedObjectContext];
+
 [Item deleteAll:self.managedObjectContext];
+
 [Item removeItemWithKey:@"my_key_2" withOMC: self.managedObjectContext];
