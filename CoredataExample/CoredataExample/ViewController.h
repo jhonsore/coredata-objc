@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
+#import "PersistentStack.h"
+
 @class PersistentStack;
 
 @interface ViewController : UIViewController

@@ -13,7 +13,6 @@
 
 @dynamic key;
 @dynamic value;
-@dynamic children;
 
 + (BOOL)insertItemWithkey:(NSString*)key
                          withValue:(NSString *) value
@@ -40,7 +39,7 @@
     NSError *error = nil;
     NSArray *results = [moc executeFetchRequest:request error:&error];
     if (!results) {
-        NSLog(@"Error fetching Employee objects: %@\n%@", [error localizedDescription], [error userInfo]);
+        NSLog(@"Error fetching objects: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
     NSLog(@"%@",results);

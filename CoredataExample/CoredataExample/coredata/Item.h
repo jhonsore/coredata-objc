@@ -15,7 +15,6 @@
 
 @property (nonatomic, retain) NSString* key;
 @property (nonatomic, retain) NSString* value;
-@property (nonatomic, retain) NSSet* children;
 
 + (BOOL)insertItemWithkey:(NSString*)key
                          withValue:(NSString *) value

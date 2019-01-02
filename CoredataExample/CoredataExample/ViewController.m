@@ -7,9 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "Item.h"
-#import "AppDelegate.h"
-#import "PersistentStack.h"
 
 @interface ViewController ()
     @property (nonatomic, strong) PersistentStack* persistentStack;
@@ -26,9 +23,13 @@
     self.managedObjectContext = self.persistentStack.managedObjectContext;
     
     //adiciona item
-    //[self addItemWithKey:@"my_key_2" withValue:@"my_value"];
+    /*[Item
+     insertItemWithkey:@"my_key_3"
+     withValue:@"my-value-3"
+     inManagedObjectContext:self.managedObjectContext
+     ];*/
     //retorna todos os itens
-    [Item getAllItemsWithMOC: self.managedObjectContext];
+    //[Item getAllItemsWithMOC: self.managedObjectContext];
     //Item *item = [Item getItemByKey:@"my_key_2" withOMC: self.managedObjectContext];
     //[Item deleteAll:self.managedObjectContext];
     //[Item removeItemWithKey:@"my_key_2" withOMC: self.managedObjectContext];
@@ -38,11 +39,7 @@
 //------------------------------
 //------------------------------
 - (void) addItemWithKey:(NSString *) key withValue:(NSString*) value{
-    [Item
-        insertItemWithkey:key
-        withValue:value
-        inManagedObjectContext:self.managedObjectContext
-    ];
+    
 }
 
 - (NSURL*)storeURL
