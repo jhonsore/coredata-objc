@@ -1,8 +1,10 @@
 //
-// Created by Chris Eidhof
+//  ViewController.h
+//  CoredataExample
 //
-
-
+//  Created by Jhonnatan Soares Rebuli on 02/01/19.
+//  Copyright © 2019 Coredata. All rights reserved.
+//
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 

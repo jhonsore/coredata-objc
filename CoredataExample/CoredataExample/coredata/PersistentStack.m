@@ -1,11 +1,10 @@
 //
-// Created by Chris Eidhof on 8/13/13.
-// Copyright (c) 2013 Chris Eidhof. All rights reserved.
+//  ViewController.h
+//  CoredataExample
 //
-// To change the template use AppCode | Preferences | File Templates.
+//  Created by Jhonnatan Soares Rebuli on 02/01/19.
+//  Copyright © 2019 Coredata. All rights reserved.
 //
-
-
 #import "PersistentStack.h"
 
 

@@ -25,12 +25,13 @@
     //adiciona item
     /*[Item
      insertItemWithkey:@"my_key_3"
-     withValue:@"my-value-3"
+     withValue:@"my-value-5"
      inManagedObjectContext:self.managedObjectContext
      ];*/
     //retorna todos os itens
     //[Item getAllItemsWithMOC: self.managedObjectContext];
-    //Item *item = [Item getItemByKey:@"my_key_2" withOMC: self.managedObjectContext];
+    //Item *item = [Item getItemByKey:@"my_key_3" withOMC: self.managedObjectContext];
+    //NSLog(@"%@",item.value);
     //[Item deleteAll:self.managedObjectContext];
     //[Item removeItemWithKey:@"my_key_2" withOMC: self.managedObjectContext];
 }

@@ -1,11 +1,10 @@
 //
-//  Item.m
-//  NestedTodoList
+//  ViewController.h
+//  CoredataExample
 //
-//  Created by Chris Eidhof on 8/14/13.
-//  Copyright (c) 2013 Chris Eidhof. All rights reserved.
+//  Created by Jhonnatan Soares Rebuli on 02/01/19.
+//  Copyright © 2019 Coredata. All rights reserved.
 //
-
 #import "Item.h"
 #import "Item.h"
 
@@ -18,17 +17,30 @@
                          withValue:(NSString *) value
              inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
-    Item* item = [NSEntityDescription insertNewObjectForEntityForName:self.entityName
-                                               inManagedObjectContext:managedObjectContext];
-    item.key = key;
-    item.value = value;
+    Item *itemUpdate = [Item getItemByKey:key withOMC:managedObjectContext];
     NSError *error = nil;
     
-    if (![managedObjectContext save:&error]) {
-        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
-        return nil;
+    //if item found, we just update it, otherwise we save a new item
+    if(itemUpdate){
+        itemUpdate.value = value;
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+            return nil;
+        }
+        NSLog(@"Item update key: %@ value:%@", key, value);
+    }else{
+        Item* item = [NSEntityDescription insertNewObjectForEntityForName:self.entityName
+                                                   inManagedObjectContext:managedObjectContext];
+        item.key = key;
+        item.value = value;
+        
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+            return nil;
+        }
+        NSLog(@"Item saved key: %@ value:%@", key, value);
     }
-    NSLog(@"Item saved key: %@ value:%@", key, value);
+    
     return true;
 }
 
