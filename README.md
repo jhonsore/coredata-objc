@@ -43,7 +43,7 @@ Objective c Coredata example with create, edit, read, delete methods
         withValue:value
         inManagedObjectContext:self.managedObjectContext
     ];
-    
+
 [Item getAllItemsWithMOC: self.managedObjectContext];
 
 Item *item = [Item getItemByKey:@"my_key_2" withOMC: self.managedObjectContext];
@@ -51,3 +51,13 @@ Item *item = [Item getItemByKey:@"my_key_2" withOMC: self.managedObjectContext];
 [Item deleteAll:self.managedObjectContext];
 
 [Item removeItemWithKey:@"my_key_2" withOMC: self.managedObjectContext];
+
+
+-------------
+
+
+Tips:
+
+- Sometimes when you create the model file, it comes with code generation swift selected. So, you need to change it, otherwise will occur some errors.
+
+To change this click on your model > click show the file inspector (in right panel) > Code generation > Lnaguage > Objective C
